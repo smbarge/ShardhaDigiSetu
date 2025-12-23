@@ -47,10 +47,9 @@
 
   <div class="max-w-6xl mx-auto">
 
-    <!-- Outer Container -->
     <div class="bg-white rounded-2xl border border-gray-200 p-10">
 
-      <!-- Header -->
+    
       <div class="flex items-start gap-4 mb-10">
         <div class="bg-blue-600 p-4 rounded-xl">
           <BookOpen class="w-7 h-7 text-white" />
@@ -65,7 +64,7 @@
         </div>
       </div>
 
-      <!-- Document List -->
+      
       <div class="grid md:grid-cols-2 gap-y-10 gap-x-16">
         {#each documents as doc}
           <div class="flex items-start gap-4">

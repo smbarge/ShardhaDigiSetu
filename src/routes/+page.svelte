@@ -4,7 +4,7 @@
   import BadgesSection from '$lib/components/landingpage/BadgesSection.svelte';
   import After10thSection from '$lib/components/landingpage/After10thSection.svelte';
   import After12thSection from '$lib/components/landingpage/After12thSection.svelte';
-//   import WhyChooseSection from '$lib/components/WhyChooseSection.svelte';
+  import WhyChooseSection from '$lib/components/landingpage/WhyChooseSection.svelte';
 //   import TestimonialsSection from '$lib/components/TestimonialsSection.svelte';
 //   import CTASection from '$lib/components/CTASection.svelte';
    import Footer from '$lib/components/landingpage/Footer.svelte';
@@ -22,7 +22,7 @@
     <BadgesSection />
     <After10thSection />
     <After12thSection />
-    <!-- <WhyChooseSection /> -->
+    <WhyChooseSection />
     <!-- <TestimonialsSection /> -->
     <!-- <CTASection /> --> 
   </main>

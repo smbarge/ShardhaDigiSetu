@@ -2,7 +2,7 @@
   import { Lock } from 'lucide-svelte';
 </script>
 
-<footer class=" bg-gray-50 border-t border-gray-200 py-12 px-4">
+<footer class=" bg-white border-t border-gray-200 py-12 px-4">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-4 gap-8 mb-8">
       <div>
