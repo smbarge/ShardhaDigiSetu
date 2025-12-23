@@ -1,6 +1,30 @@
-<h1>Welcome to Akshata</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+  import Header from '$lib/components/landingpage/Header.svelte';
+  import HeroSection from '$lib/components/landingpage/HeroSection.svelte';
+//   import BadgesSection from '$lib/components/BadgesSection.svelte';
+//   import After10thSection from '$lib/components/After10thSection.svelte';
+//   import After12thSection from '$lib/components/After12thSection.svelte';
+//   import WhyChooseSection from '$lib/components/WhyChooseSection.svelte';
+//   import TestimonialsSection from '$lib/components/TestimonialsSection.svelte';
+//   import CTASection from '$lib/components/CTASection.svelte';
+   import Footer from '$lib/components/landingpage/Footer.svelte';
+</script>
 
-<h1 class="text-4xl font-bold text-blue-600">
-  Tailwind CSS Working 🎉
-</h1>
+<svelte:head>
+  <title>Shardha DigiSetu - Digital Certificate Management</title>
+  <meta name="description" content="A trusted digital platform for student certificates and education services across India" />
+</svelte:head>
+
+<div class="min-h-screen bg-white">
+  <Header />
+  <main>
+    <HeroSection />
+    <!-- <BadgesSection />
+    <After10thSection />
+    <After12thSection />
+    <WhyChooseSection />
+    <TestimonialsSection />
+    <CTASection /> -->
+  </main>
+  <Footer />
+</div>
