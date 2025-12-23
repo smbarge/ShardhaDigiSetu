@@ -1,9 +1,9 @@
 <script>
   import Header from '$lib/components/landingpage/Header.svelte';
   import HeroSection from '$lib/components/landingpage/HeroSection.svelte';
-//   import BadgesSection from '$lib/components/BadgesSection.svelte';
-//   import After10thSection from '$lib/components/After10thSection.svelte';
-//   import After12thSection from '$lib/components/After12thSection.svelte';
+  import BadgesSection from '$lib/components/landingpage/BadgesSection.svelte';
+  import After10thSection from '$lib/components/landingpage/After10thSection.svelte';
+  import After12thSection from '$lib/components/landingpage/After12thSection.svelte';
 //   import WhyChooseSection from '$lib/components/WhyChooseSection.svelte';
 //   import TestimonialsSection from '$lib/components/TestimonialsSection.svelte';
 //   import CTASection from '$lib/components/CTASection.svelte';
@@ -19,12 +19,12 @@
   <Header />
   <main>
     <HeroSection />
-    <!-- <BadgesSection />
+    <BadgesSection />
     <After10thSection />
     <After12thSection />
-    <WhyChooseSection />
-    <TestimonialsSection />
-    <CTASection /> -->
+    <!-- <WhyChooseSection /> -->
+    <!-- <TestimonialsSection /> -->
+    <!-- <CTASection /> --> 
   </main>
   <Footer />
 </div>

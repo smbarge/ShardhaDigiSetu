@@ -1,10 +1,9 @@
-<!-- src/lib/components/HeroSection.svelte -->
 <script>
   import { Shield, User, FileText, Award } from 'lucide-svelte';
   import FeatureCard from './FeatureCard.svelte';
 </script>
 
-<section class="bg-white py-16 px-4">
+<section class="bg-gray-50 py-16 px-4">
   <div class="max-w-6xl mx-auto">
     <div class="flex items-center gap-2 mb-6">
         <Shield class="w-5 h-5 text-blue-600" />
@@ -55,6 +54,7 @@
       </div>
       
       <div class="space-y-4">
+        
         <FeatureCard
           title="Unified Certificate Workflow"
           description="School, revenue, and special certificates managed through one transparent process."

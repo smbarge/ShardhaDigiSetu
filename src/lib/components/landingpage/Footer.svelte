@@ -1,14 +1,13 @@
-<!-- src/lib/components/Footer.svelte -->
 <script>
   import { Lock } from 'lucide-svelte';
 </script>
 
-<footer class="bg-white border-t border-gray-200 py-12 px-4">
+<footer class=" bg-gray-50 border-t border-gray-200 py-12 px-4">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-4 gap-8 mb-8">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+          <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
             <Lock class="w-6 h-6 text-white" />
           </div>
           <h3 class="font-bold text-gray-900">Shardha DigiSetu</h3>
