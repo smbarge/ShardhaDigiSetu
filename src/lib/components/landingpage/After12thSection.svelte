@@ -43,16 +43,15 @@
   ];
 </script>
 
-<section class="pt-8 pb-16 px-4 bg-gray-50">
 
+<section class="pt-16 pb-8 px-4 bg-gray-50">
   <div class="max-w-6xl mx-auto">
 
     <div class="bg-white rounded-2xl border border-gray-200 p-10">
 
-    
       <div class="flex items-start gap-4 mb-10">
         <div class="bg-blue-600 p-4 rounded-xl">
-          <BookOpen class="w-7 h-7 text-white" />
+           <BookOpen class="w-7 h-7 text-white" />
         </div>
         <div>
           <h2 class="text-3xl font-bold text-gray-900 mb-2">
@@ -64,16 +63,18 @@
         </div>
       </div>
 
-      
-      <div class="grid md:grid-cols-2 gap-y-10 gap-x-16">
+      <div class="grid md:grid-cols-2 gap-y-4 gap-x-4">
         {#each documents as doc}
-          <div class="flex items-start gap-4">
+            <div
+              class="flex items-start gap-4 p-4 rounded-xl cursor-pointer transition
+                    hover:bg-blue-50"
+            >
             <svelte:component
               this={doc.icon}
-              class="w-6 h-6 text-blue-600 mt-1"
+              class="w-6 h-6 text-blue-600 mt-1 group-hover:text-blue-700"
             />
             <div>
-              <h3 class="font-semibold text-gray-900">
+            <h3 class="font-semibold text-gray-900 group-hover:text-blue-700">
                 {doc.title}
               </h3>
               <p class="text-gray-600 text-sm mt-1">

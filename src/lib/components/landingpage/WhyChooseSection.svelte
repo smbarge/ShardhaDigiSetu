@@ -34,24 +34,30 @@
 </script>
 
 <section class="bg-gray-50 py-16 px-4">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl font-bold text-gray-900 mb-4">
-      Why Choose EduLocker?
-    </h2>
-    <p class="text-gray-600 text-lg mb-12">
-      A unified platform designed to simplify document management for students,
-      schools, and government authorities.
-    </p>
+  <div class="max-w-6xl mx-auto">
 
-    <div class="grid md:grid-cols-4 gap-6">
+    <!-- Heading (CENTER) -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Why Choose EduLocker?
+      </h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        A unified platform designed to simplify document management for students,
+        schools, and government authorities.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {#each benefits as benefit}
         <div
           class="bg-white border border-gray-200 rounded-xl p-6
-                 hover:shadow-lg transition-shadow"
+                 shadow-md hover:shadow-lg transition-shadow text-left"
         >
+          <!-- Icon (LEFT aligned) -->
           <div
             class="{benefit.color} w-12 h-12 rounded-xl
-                   flex items-center justify-center mx-auto mb-4"
+                   flex items-center justify-center mb-4"
           >
             <svelte:component
               this={benefit.icon}
@@ -59,14 +65,17 @@
             />
           </div>
 
-          <h3 class="font-bold text-gray-900 mb-3">
+          <!-- Text -->
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">
             {benefit.title}
           </h3>
-          <p class="text-gray-600 text-sm">
+
+          <p class="text-sm text-gray-600">
             {benefit.description}
           </p>
         </div>
       {/each}
     </div>
+
   </div>
 </section>
