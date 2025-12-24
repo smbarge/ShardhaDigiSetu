@@ -1,4 +1,3 @@
-<!-- src/routes/student-login/+page.svelte -->
 <script>
   import { Lock, FileText, TrendingUp, Shield, Clock, Download, Eye, ChevronRight, UserPlus, Globe } from 'lucide-svelte';
     import { goto } from '$app/navigation';

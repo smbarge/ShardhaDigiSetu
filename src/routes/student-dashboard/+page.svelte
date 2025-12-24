@@ -7,6 +7,27 @@
     government: false,
     other: false
   };
+  let searchText = '';
+  let selectedType = 'All Certificate Types';
+  let selectedStatus = 'All Status';
+
+  function filterCertificates(list, type) {
+  return list.filter(cert => {
+    const matchesSearch =
+      cert.title.toLowerCase().includes(searchText.toLowerCase()) ||
+      cert.authority.toLowerCase().includes(searchText.toLowerCase());
+
+    const matchesType =
+      selectedType === 'All Certificate Types' || type === selectedType;
+
+    const matchesStatus =
+      selectedStatus === 'All Status' || cert.status === selectedStatus;
+
+    return matchesSearch && matchesType && matchesStatus;
+  });
+}
+
+
 
   function toggleSection(section) {
     expandedSections[section] = !expandedSections[section];
@@ -19,7 +40,7 @@
       issued: "15 May 2023",
       status: "Active",
       priority: true,
-      icon: "📄"
+    //   icon: "📄"
     },
     {
       title: "12th Standard Marksheet",
@@ -27,7 +48,7 @@
       issued: "20 May 2025",
       status: "Active",
       priority: true,
-      icon: "📄"
+    //   icon: "📄"
     },
     {
       title: "School Bonafide Certificate",
@@ -35,28 +56,28 @@
       issued: "10 Jan 2025",
       validUntil: "10 Jan 2026",
       status: "Active",
-      icon: "🎓"
+    //   icon: "🎓"
     },
     {
       title: "School Leaving Certificate",
       authority: "St. Xavier's High School, Mumbai",
       issued: "01 Jun 2025",
       status: "Active",
-      icon: "📋"
+    //   icon: "📋"
     },
     {
       title: "Migration Certificate",
       authority: "Maharashtra State Board",
       issued: "15 Jun 2025",
       status: "Active",
-      icon: "🔄"
+    //   icon: "🔄"
     },
     {
       title: "Transfer Certificate",
       authority: "Modern High School, Pune",
       issued: "15 Mar 2023",
       status: "Expired",
-      icon: "➡️"
+    //   icon: "➡️"
     }
   ];
 
@@ -67,7 +88,7 @@
       issued: "01 Dec 2024",
       validUntil: "01 Dec 2027",
       status: "Active",
-      icon: "🛡️"
+    //   icon: "🛡️"
     },
     {
       title: "NSS Certificate",
@@ -75,14 +96,14 @@
       issued: "20 Nov 2024",
       validUntil: "20 Nov 2027",
       status: "Active",
-      icon: "💙"
+    //   icon: "💙"
     },
     {
       title: "State Level Sports Certificate",
       authority: "Maharashtra State Sports Authority",
       issued: "10 Sept 2024",
       status: "Active",
-      icon: "🏆"
+    //   icon: "🏆"
     }
   ];
 
@@ -94,7 +115,7 @@
       validUntil: "05 Aug 2027",
       appNo: "DOM/2024/12345",
       status: "Active",
-      icon: "📍"
+    //   icon: "📍"
     },
     {
       title: "Income Certificate",
@@ -103,7 +124,7 @@
       validUntil: "15 Jul 2025",
       appNo: "INC/2024/67890",
       status: "Active",
-      icon: "💰"
+    //   icon: "💰"
     },
     {
       title: "Caste Certificate",
@@ -112,7 +133,7 @@
       validUntil: "20 Jun 2026",
       appNo: "CST/2023/11223",
       status: "Active",
-      icon: "👥"
+    //   icon: "👥"
     },
     {
       title: "Orphan Certificate",
@@ -120,7 +141,7 @@
       issued: "20 Sept 2025",
       appNo: "ORP/2025/99001",
       status: "Pending",
-      icon: "💙"
+    //   icon: "💙"
     },
     {
       title: "Caste Validity Certificate",
@@ -128,7 +149,7 @@
       issued: "10 Aug 2025",
       appNo: "CSV/2025/22334",
       status: "Pending",
-      icon: "✓"
+    //   icon: "✓"
     },
     {
       title: "UDID Disability Certificate",
@@ -137,7 +158,7 @@
       validUntil: "05 Jul 2029",
       appNo: "UDID/2024/44556",
       status: "Active",
-      icon: "♿"
+    //   icon: "♿"
     }
   ];
 
@@ -147,14 +168,14 @@
       authority: "St. Xavier's High School, Mumbai",
       issued: "01 Jun 2025",
       status: "Active",
-      icon: "⭐"
+    //   icon: "⭐"
     },
     {
       title: "Gap Certificate",
       authority: "Self Declaration",
       issued: "01 Jul 2025",
       status: "Active",
-      icon: "📅"
+    //   icon: "📅"
     }
   ];
 </script>
@@ -248,7 +269,7 @@
         <Plus class="w-5 h-5" />
         Apply for Certificate
       </button>
-      <button class="flex-1 bg-purple-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center gap-2">
+      <button class="flex-1 bg-slate-700 text-white py-4 px-6 rounded-xl font-semibold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
         <Compass class="w-5 h-5" />
         Explore Pathways
       </button>
@@ -261,18 +282,19 @@
           <Search class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
           <input
             type="text"
+            bind:value={searchText}
             placeholder="Search certificates by name or authority..."
             class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <select class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+<select bind:value={selectedStatus} class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
           <option>All Certificate Types</option>
           <option>Academic</option>
           <option>Sports & Activity</option>
           <option>Government</option>
           <option>Other</option>
         </select>
-        <select class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+<select bind:value={selectedStatus} class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
           <option>All Status</option>
           <option>Active</option>
           <option>Pending</option>
@@ -296,22 +318,16 @@
           </div>
           <div>
             <h2 class="text-xl font-bold text-gray-900">Academic Certificates</h2>
-            <p class="text-sm text-gray-600">6 documents</p>
+            <p class="text-sm text-gray-600">{filterCertificates(academicCertificates, 'Academic').length} documents</p>
           </div>
         </div>
         <ChevronDown class="w-5 h-5 text-gray-400 transition-transform {expandedSections.academic ? 'rotate-180' : ''}" />
       </div>
       {#if expandedSections.academic}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {#each academicCertificates as cert}
+          {#each filterCertificates(academicCertificates, 'Academic') as cert}
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-              <div class="relative h-48 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
-                <div class="text-6xl">{cert.icon}</div>
-                {#if cert.priority}
-                  <span class="absolute top-3 left-3 bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-medium">
-                    Priority
-                  </span>
-                {/if}
+              <div class="relative h-1 bg-gradient-to-br flex items-center justify-center">
                 {#if cert.status === "Active"}
                   <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-medium">
                     Active
@@ -321,11 +337,11 @@
                     Expired
                   </span>
                 {:else if cert.status === "Pending"}
-                  <span class="absolute top-3 right-3 bg-purple-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                  <span class="absolute top-3 right-3 bg-slate-700 text-white text-xs px-2 py-1 rounded-full font-medium">
                     Pending
                   </span>
                 {/if}
-              </div>
+                </div> 
               <div class="p-4">
                 <h3 class="font-semibold text-gray-900 mb-2 text-lg">{cert.title}</h3>
                 <p class="text-sm text-gray-600 mb-3">{cert.authority}</p>
@@ -379,23 +395,23 @@
           </div>
           <div>
             <h2 class="text-xl font-bold text-gray-900">Sports & Activity Certificates</h2>
-            <p class="text-sm text-gray-600">3 documents</p>
+<p class="text-sm text-gray-600">{filterCertificates(sportsCertificates, 'Sports & Activity').length} documents</p>
           </div>
         </div>
         <ChevronDown class="w-5 h-5 text-gray-400 transition-transform {expandedSections.sports ? 'rotate-180' : ''}" />
       </div>
       {#if expandedSections.sports}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {#each sportsCertificates as cert}
+          {#each filterCertificates(sportsCertificates, 'Sports & Activity') as cert}
+
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-              <div class="relative h-48 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
-                <div class="text-6xl">{cert.icon}</div>
-                {#if cert.status === "Active"}
+               <div class="relative h-1 bg-gradient-to-br flex items-center justify-center">
+              {#if cert.status === "Active"}
                   <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-medium">
                     Active
                   </span>
                 {/if}
-              </div>
+                </div> 
               <div class="p-4">
                 <h3 class="font-semibold text-gray-900 mb-2 text-lg">{cert.title}</h3>
                 <p class="text-sm text-gray-600 mb-3">{cert.authority}</p>
@@ -443,17 +459,16 @@
           </div>
           <div>
             <h2 class="text-xl font-bold text-gray-900">Government Documents</h2>
-            <p class="text-sm text-gray-600">6 documents</p>
+<p class="text-sm text-gray-600">{filterCertificates(governmentDocs, 'Government').length} documents</p>
           </div>
         </div>
         <ChevronDown class="w-5 h-5 text-gray-400 transition-transform {expandedSections.government ? 'rotate-180' : ''}" />
       </div>
       {#if expandedSections.government}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {#each governmentDocs as cert}
-            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-              <div class="relative h-48 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
-                <div class="text-6xl">{cert.icon}</div>
+          {#each filterCertificates(governmentDocs, 'Government') as cert}
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">   
+               <div class="relative h-1 bg-gradient-to-br flex items-center justify-center">
                 {#if cert.status === "Active"}
                   <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-medium">
                     Active
@@ -487,7 +502,7 @@
                 </div>
                 <div class="flex gap-2 mt-4">
                   {#if cert.status === "Pending"}
-                    <button class="flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-purple-700 transition-colors flex items-center justify-center gap-2">
+                    <button class="flex-1 bg-slate-700 text-white py-2 px-4 rounded-lg font-medium hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
                       <MapPin class="w-4 h-4" />
                       Track Application
                     </button>
@@ -524,23 +539,22 @@
           </div>
           <div>
             <h2 class="text-xl font-bold text-gray-900">Other Certificates</h2>
-            <p class="text-sm text-gray-600">2 documents</p>
+        <p class="text-sm text-gray-600">{filterCertificates(otherCertificates, 'Other').length} documents</p>
           </div>
         </div>
         <ChevronDown class="w-5 h-5 text-gray-400 transition-transform {expandedSections.other ? 'rotate-180' : ''}" />
       </div>
       {#if expandedSections.other}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {#each otherCertificates as cert}
+          {#each filterCertificates(otherCertificates, 'Other') as cert}
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-              <div class="relative h-48 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
-                <div class="text-6xl">{cert.icon}</div>
-                {#if cert.status === "Active"}
+              <div class="relative h-1 bg-gradient-to-br flex items-center justify-center">  
+              {#if cert.status === "Active"}
                   <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-medium">
                     Active
                   </span>
                 {/if}
-              </div>
+                </div>
               <div class="p-4">
                 <h3 class="font-semibold text-gray-900 mb-2 text-lg">{cert.title}</h3>
                 <p class="text-sm text-gray-600 mb-3">{cert.authority}</p>
