@@ -4,8 +4,10 @@
 </script>
 
 <div
-  class="bg-white border border-blue-100 rounded-2xl p-6
-         shadow-[0_0_0_1px_rgba(59,130,246,0.05)]"
+  class="group bg-white border border-blue-100 rounded-2xl p-6
+         transition-all duration-300 ease-in-out
+         shadow-[0_0_0_1px_rgba(49,120,236,0.03)]
+         hover:shadow-lg "
 >
   <div class="flex items-start gap-4">
     

@@ -9,21 +9,24 @@
   ];
 </script>
 
-<section class="py-10 border-t  bg-gray-50 border-gray-200">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="flex flex-wrap justify-center gap-10">
-
+<section class="py-8 md:py-10 lg:py-12 bg-gray-50 border-y border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+    
+    <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-12">
+      
       {#each badges as badge}
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 md:gap-3">
           
-          <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+          <!-- Icon Box -->
+          <div class="w-8 h-8 md:w-10 md:h-10 bg-blue-600 rounded-md flex items-center justify-center">
             <svelte:component
               this={badge.icon}
-              class="w-6 h-6 text-white"
+              class="w-4 h-4 md:w-5 md:h-5 text-white"
             />
           </div>
 
-          <span class="text-lg font-medium text-gray-900">
+          <!-- Text -->
+          <span class="text-sm md:text-base font-medium text-gray-900 whitespace-nowrap">
             {badge.text}
           </span>
 

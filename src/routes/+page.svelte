@@ -5,8 +5,8 @@
   import After10thSection from '$lib/components/landingpage/After10thSection.svelte';
   import After12thSection from '$lib/components/landingpage/After12thSection.svelte';
   import WhyChooseSection from '$lib/components/landingpage/WhyChooseSection.svelte';
-//   import TestimonialsSection from '$lib/components/TestimonialsSection.svelte';
-//   import CTASection from '$lib/components/CTASection.svelte';
+  import TestimonialsSection from '$lib/components/landingpage/TestimonialsSection.svelte';
+  import CTASection from '$lib/components/landingpage/CTASection.svelte';
    import Footer from '$lib/components/landingpage/Footer.svelte';
 </script>
 
@@ -23,8 +23,8 @@
     <After10thSection />
     <After12thSection />
     <WhyChooseSection />
-    <!-- <TestimonialsSection /> -->
-    <!-- <CTASection /> --> 
+    <TestimonialsSection />
+    <CTASection /> 
   </main>
   <Footer />
 </div>

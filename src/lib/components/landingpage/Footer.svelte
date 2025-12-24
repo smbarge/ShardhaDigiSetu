@@ -50,14 +50,14 @@
         <h4 class="font-semibold text-gray-900 mb-4">Contact</h4>
         <ul class="space-y-2 text-gray-600 text-sm">
           <li>Support: 1800-XXX-XXXX</li>
-          <li>Email: support@edulocker.gov.in</li>
+          <li>Email: support@ShardhaDigiSetu.gov.in</li>
           <li>Office Hours: 9 AM - 6 PM</li>
         </ul>
       </div>
     </div>
     
     <div class="border-t border-gray-200 pt-6 flex flex-wrap justify-between items-center text-sm text-gray-600">
-      <p>© 2025 EduLocker. All rights reserved. Government of India Initiative.</p>
+      <p>© 2025 Shardha DigiSetu. All rights reserved. Government of India Initiative.</p>
       <p>Powered by <span class="text-blue-600 font-medium">Digital India</span></p>
     </div>
   </div>

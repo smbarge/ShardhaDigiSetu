@@ -36,10 +36,9 @@
 <section class="bg-gray-50 py-16 px-4">
   <div class="max-w-6xl mx-auto">
 
-    <!-- Heading (CENTER) -->
     <div class="text-center mb-12">
       <h2 class="text-4xl font-bold text-gray-900 mb-4">
-        Why Choose EduLocker?
+        Why Choose Shardha DigiSetu?
       </h2>
       <p class="text-gray-600 text-lg max-w-2xl mx-auto">
         A unified platform designed to simplify document management for students,
@@ -47,14 +46,13 @@
       </p>
     </div>
 
-    <!-- Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {#each benefits as benefit}
         <div
           class="bg-white border border-gray-200 rounded-xl p-6
                  shadow-md hover:shadow-lg transition-shadow text-left"
         >
-          <!-- Icon (LEFT aligned) -->
+          
           <div
             class="{benefit.color} w-12 h-12 rounded-xl
                    flex items-center justify-center mb-4"
@@ -65,7 +63,6 @@
             />
           </div>
 
-          <!-- Text -->
           <h3 class="text-lg font-semibold text-gray-900 mb-2">
             {benefit.title}
           </h3>

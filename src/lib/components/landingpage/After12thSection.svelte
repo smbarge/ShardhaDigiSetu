@@ -47,7 +47,7 @@
 <section class="pt-16 pb-8 px-4 bg-gray-50">
   <div class="max-w-6xl mx-auto">
 
-    <div class="bg-white rounded-2xl border border-gray-200 p-10">
+    <div class="bg-white rounded-2xl border border-gray-200 p-8">
 
       <div class="flex items-start gap-4 mb-10">
         <div class="bg-blue-600 p-4 rounded-xl">
