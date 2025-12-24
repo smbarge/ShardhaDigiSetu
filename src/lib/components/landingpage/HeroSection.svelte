@@ -1,6 +1,7 @@
 <script>
   import { Shield, User, FileText, Award } from 'lucide-svelte';
   import FeatureCard from './FeatureCard.svelte';
+  import { goto } from '$app/navigation';
 </script>
 
     <section class="bg-gray-50 py-12 md:py-16 lg:py-24 px-4">
@@ -28,11 +29,16 @@
             Get Started
             <span>→</span>
           </button>
-          <button class="border border-gray-300 text-gray-700 px-5 py-3 rounded-lg font-medium hover:bg-gray-50 flex items-center gap-2">
-            <User class="w-5 h-5" />
-            Student Login
-          </button>
-          <button class="border border-gray-300 text-gray-700 px-5 py-3 rounded-lg font-medium hover:bg-gray-50 flex items-center gap-2">
+          <button
+          on:click={() => goto('/student-login')}
+          class="border border-gray-300 text-gray-700 px-5 py-3 rounded-lg font-medium hover:bg-gray-50 flex items-center gap-2"
+        >
+          <User class="w-5 h-5" />
+          Student Login
+        </button>
+          <button
+           on:click={() => goto('/school-login')}
+           class="border border-gray-300 text-gray-700 px-5 py-3 rounded-lg font-medium hover:bg-gray-50 flex items-center gap-2">
             <FileText class="w-5 h-5" />
             School Login
           </button>
